@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seminar 10 Activities</title>
+<style>
+:root{--text:#1a1a1a;--muted:#6b7280;--line:#e5e7eb;--accent:#07428C;--bg:#fff;--soft:#f4f6f9;--flag:#fff8e1;--flagtext:#7a5c00}
+@media (prefers-color-scheme: dark){:root{--text:#e5e7eb;--muted:#9ca3af;--line:#2d333b;--accent:#8db6ec;--bg:#111418;--soft:#1a1f26;--flag:#33300f;--flagtext:#e8cf7a}}
+*{box-sizing:border-box}
+html,body{overflow-x:hidden}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+header{padding:20px 16px 8px;max-width:720px;margin:0 auto}
+header h1{font-size:22px;margin:0}
+header p{margin:2px 0 0;color:var(--muted);font-size:14px}
+nav{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+nav div{display:flex;gap:4px;overflow-x:auto;max-width:720px;margin:0 auto;padding:0 12px}
+nav button{flex:0 0 auto;font:inherit;font-size:15px;background:none;border:0;border-bottom:3px solid transparent;color:var(--muted);padding:12px 8px;cursor:pointer}
+nav button.on{color:var(--accent);border-bottom-color:var(--accent);font-weight:600}
+main{max-width:720px;margin:0 auto;padding:12px 16px 40px;overflow-wrap:anywhere}
+section{display:none}section.on{display:block}
+h2{font-size:19px;margin:16px 0 6px}
+h3{font-size:16px;margin:22px 0 6px}
+.steps{background:var(--soft);border-radius:10px;padding:12px 16px 12px 34px;margin:10px 0 16px}
+.steps li{margin:2px 0}
+.muted{color:var(--muted);font-size:14px}
+.choice{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
+.choice button{font:inherit;font-size:15px;background:var(--bg);color:var(--text);border:1px solid var(--line);border-radius:999px;padding:8px 14px;cursor:pointer}
+.choice button.on{background:var(--accent);border-color:var(--accent);color:var(--bg);font-weight:600}
+.btn{font:inherit;background:var(--accent);color:var(--bg);border:0;border-radius:8px;padding:10px 18px;cursor:pointer}
+.btn.ghost{background:none;color:var(--accent);border:1px solid var(--accent)}
+.link{font:inherit;background:none;border:0;padding:0;color:var(--accent);cursor:pointer;text-decoration:underline}
+.bar{display:flex;gap:16px;align-items:center;flex-wrap:wrap;margin:18px 0}
+label.f{display:block;font-weight:600;font-size:15px;margin-top:14px}
+label.f small{font-weight:normal;color:var(--muted)}
+input[type=text],textarea{width:100%;font:inherit;color:inherit;background:transparent;border:0;border-bottom:1px solid var(--line);padding:6px 0;outline:none}
+input[type=text]:focus,textarea:focus{border-color:var(--accent)}
+textarea{resize:vertical;min-height:44px}
+.item{display:flex;gap:10px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--line);cursor:pointer}
+.item input{width:20px;height:20px;margin:2px 0 0;accent-color:var(--accent);flex:0 0 auto}
+.pts{display:inline-block;min-width:54px;font-weight:600;color:var(--accent)}
+.q{padding:14px 0;border-bottom:1px solid var(--line)}
+.q small{color:var(--muted)}
+.opts{display:flex;gap:18px;margin-top:6px;font-size:15px;flex-wrap:wrap}
+.opts label{display:flex;align-items:center;gap:6px;cursor:pointer}
+.opts input{accent-color:var(--accent);width:18px;height:18px;margin:0}
+.q.flag{background:var(--flag);margin:0 -10px;padding:14px 10px}
+.hint{display:none;font-size:14px;color:var(--flagtext);margin-top:4px}.q.flag .hint{display:block}
+details{border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:12px 0}
+summary{cursor:pointer;font-weight:600}
+table{width:100%;border-collapse:collapse;font-size:15px;margin-top:6px}
+td{border-bottom:1px solid var(--line);padding:8px 6px;vertical-align:top}
+td.l{font-weight:700;color:var(--accent);font-size:18px;width:30px}
+.topic{font-size:22px;font-weight:700;color:var(--accent);min-height:32px;margin:14px 0 4px}
+.card{padding:4px 0}
+.secret{background:var(--soft);border-radius:10px;padding:14px 16px;margin:10px 0}
+.score{font-size:24px;font-weight:700;color:var(--accent)}
+.refs{font-size:12px;color:var(--muted)}
+.refs a{color:var(--accent)}
+.toast{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);background:var(--text);color:var(--bg);padding:8px 14px;border-radius:8px;font-size:14px;opacity:0;transition:opacity .2s;pointer-events:none;z-index:9}
+.toast.on{opacity:1}
+footer{max-width:720px;margin:0 auto;padding:0 16px 28px;font-size:13px;color:var(--muted)}
+</style>
+</head>
+<body>
+<header><h1>Seminar 10 Activities</h1><p>Professional Skills and Employability · WIUT</p></header>
+<nav><div id="tabs"></div></nav>
+<main>
+<section id="warmup"></section>
+<section id="reading"></section>
+<section id="cases"></section>
+<section id="negotiation"></section>
+<section id="checklist"></section>
+</main>
+<div id="next" style="max-width:720px;margin:0 auto;padding:0 16px 24px"></div>
+<footer>Your answers are saved only on this phone. Use “Copy” to share them. <button class="link" id="resetAll">Clear everything</button></footer>
+<div class="toast" id="toast"></div>
+<script>
+(function(){
+'use strict';
+var D = {"silent": {"title": "Option A: Silent Presentations", "rules": ["Work in your CW1 group. Take one topic card.", "**4 minutes:** plan a 45–60-second presentation with a clear structure: greeting, 3 main points, conclusion, “thank you”.", "**Present without words:** use only gestures, facial expressions, eye contact and humming with your mouth closed (“mm-mm-mm”). Use your voice: intonation, pace, pauses, volume.", "No props, no writing, no real words.", "The class guesses your topic and main points."], "scoring": ["**3 points** if the class guesses your topic", "**+1 point** for each main point the class guesses", "**+2 bonus points** for the best delivery (teacher’s choice)"], "topics": ["You have just received your dream job offer.", "Your phone will not stop buzzing at 11 p.m.", "Your first day at a new job.", "AI took over part of your job, but you found a new role.", "Monday morning burnout.", "Asking your manager for a higher salary.", "Working from home alone all week.", "Delivering food in the rain as a courier."]}, "hunt": {"title": "Option B: Job Market Scavenger Hunt", "tip": "Useful hh.uz filters: “No experience”, “With salary”, “Remote work”.", "cols": {"1": ["Find a job advert in Uzbekistan that asks for AI or ChatGPT skills. What is the job title?", "What is the maximum normal working week in Uzbekistan? Name your source.", "Find a job title on hh.uz that did not exist 10–15 years ago."], "2": ["Find two adverts for the same entry-level job that show salaries. Why might one pay more than the other?", "Find a remote job advert in Tashkent. Give one advantage and one risk of this job for a beginner.", "Find a company (any country) that tried a 4-day working week. What was the result?"], "3": ["Find a job advert with a “red flag”. What question would you ask the employer about it?", "Compare the benefits (not the salary) in two adverts for similar jobs. Which would you choose and why?", "Find a 2025–2026 news story about jobs changing because of AI. Summarise it in 2 sentences and name the source."]}}, "huntRule": "Choose **3 or 4 tasks**. Show your teacher the evidence (screenshot or link) and your answer.", "red": {"title": "What is a red flag?", "text": "A red flag is a warning sign that a job may be unfair, illegal, unsafe or a scam.", "examples": ["no salary, or a vague one (“high income!”)", "unpaid “trial” work", "part of the salary “in an envelope”", "no written contract", "“ready to work 24/7”", "vague duties", "a fee to get the job", "pressure to decide today", "only a personal Telegram contact"], "todo": "What to do: ask questions, ask for it in writing, or walk away."}, "cards": [{"letter": "A", "title": "AI and Your First Job", "text": ["Generative AI tools can now write, summarise, translate and code in seconds. Does this mean there will be no jobs for young people? Researchers at Stanford University studied payroll data for millions of US workers. In their August 2026 update, they found **no evidence of economy-wide job losses**. However, employment of young workers aged 22–25 in the most AI-exposed jobs, such as software development and customer service, was **19% lower** than it would have been if it had kept pace with less-exposed jobs. Experienced workers showed no similar gap. The main reason is that companies are **hiring fewer beginners**, not firing more people (Brynjolfsson, Chandar and Chen, 2026).", "Importantly, the decline happened mainly in jobs where AI **replaces** human tasks. Where AI **helps** people do their work better, employment stayed stable or grew.", "Anne Chow from the Kellogg School of Management advises young people to develop skills AI cannot easily copy, such as building relationships, negotiation and storytelling, and to treat AI literacy as a basic requirement. She suggests asking “Am I growing?” instead of only “Am I happy?” (Chow, 2026)."], "box": ["Key terms", "**Automation:** AI does a task instead of a person.  **Augmentation:** AI helps a person do a task better or faster."], "question": "Is your future job more likely to be replaced or helped by AI? Why?", "refs": ["Brynjolfsson, E., Chandar, B. and Chen, R. (2026) Canaries in the coal mine? Six facts about the recent employment effects of artificial intelligence. Stanford Digital Economy Lab. Available from: https://digitaleconomy.stanford.edu/app/uploads/2026/08/Canaries_August2026.pdf [Accessed 6 October 2026]", "Chow, A. (2026) AI is wiping out entry-level jobs. Here’s how to surf the wave and not get crushed by it. Kellogg Insight. Available from: https://insight.kellogg.northwestern.edu/article/ai-is-wiping-out-entry-level-jobs-heres-how-to-surf-the-wave-and-not-get-crushed-by-it [Accessed 6 October 2026]"]}, {"letter": "B", "title": "Burnout: “Just Tired” or Something More?", "text": ["In 2019, the World Health Organization (WHO) included burn-out in its International Classification of Diseases as an **occupational phenomenon**, not a medical condition. The WHO describes it as the result of **chronic workplace stress that has not been successfully managed**. It has three dimensions: (1) feeling exhausted and without energy, (2) mental distance from your job, or negative and cynical feelings about it, and (3) reduced professional effectiveness (WHO, 2019).", "Young people are under pressure. In Deloitte’s 2025 global survey, **40% of Gen Z** and 34% of millennials said they feel stressed or anxious all or most of the time (Deloitte, 2025).", "How is burnout different from stress? HelpGuide explains that stress is usually about **“too much”**: too many tasks, too much pressure. Burnout is about **“not enough”**: feeling empty, without motivation and beyond caring. Warning signs include constant tiredness, poor sleep, getting ill often, procrastination, losing motivation and withdrawing from other people. Helpful steps include talking to people you trust, setting limits on work, regular exercise and sleep, and re-thinking your priorities (HelpGuide, 2026).", "Burnout can start long before your first job: during exam periods, when combining study with part-time work, or when trying to be perfect at everything."], "question": "Is it a sign of weakness to admit burnout? What can a student do to prevent it?", "refs": ["World Health Organization (2019) Burn-out an “occupational phenomenon”: International Classification of Diseases. Available from: https://www.who.int/news/item/28-05-2019-burn-out-an-occupational-phenomenon-international-classification-of-diseases [Accessed 6 October 2026]", "Deloitte (2025) 2025 Gen Z and Millennial Survey. Available from: https://www.deloitte.com/us/en/insights/topics/talent/2025-gen-z-millennial-survey.html [Accessed 6 October 2026]", "HelpGuide (2026) Burnout: symptoms and tips on how to deal. Available from: https://www.helpguide.org/mental-health/stress/burnout-prevention-and-recovery [Accessed 6 October 2026]"]}, {"letter": "C", "title": "Phones and the “Infinite Workday”", "text": ["Smartphones mean we can work from anywhere, but they also mean work can follow us everywhere. Microsoft studied how people use its work software and surveyed 31,000 workers in 31 countries. It found that during core working hours an employee is **interrupted every 2 minutes** by a meeting, email or notification. The average worker receives **117 emails and 153 chat messages** a day. 40% of people who are online at 6 a.m. are already reviewing email, and 29% are checking email again by 10 p.m. Almost half (48%) say their work feels chaotic and fragmented. Microsoft calls this the **“infinite workday”** (Microsoft, 2025).", "Our attention is suffering too. Professor Gloria Mark of the University of California, Irvine, has measured how long people focus on one screen before switching. In 2004, the average was **2.5 minutes**. In recent years it has fallen to about **47 seconds** (American Psychological Association, 2023). Every switch costs time and energy, because it takes effort to refocus, and constant switching increases stress.", "What helps? Turning off non-essential notifications, planning “focus blocks” for deep work, checking messages at set times and keeping the phone away while studying."], "question": "How many times a day do you think you check your phone? How could this affect your future work?", "refs": ["Microsoft (2025) Breaking down the infinite workday. WorkLab. Available from: https://www.microsoft.com/en-us/worklab/work-trend-index/breaking-down-infinite-workday [Accessed 6 October 2026]", "American Psychological Association (2023) Why our attention spans are shrinking, with Gloria Mark, PhD [podcast]. Speaking of Psychology. Available from: https://www.apa.org/news/podcasts/speaking-of-psychology/attention-spans [Accessed 6 October 2026]"]}, {"letter": "D", "title": "“Quiet Quitting”: Laziness or Something Else?", "text": ["In 2022, the term **“quiet quitting”** went viral on social media. It describes people who keep their job but **do only the minimum required** and feel psychologically detached from their work. Gallup, a global analytics company, estimated that at least half of the US workforce were “quiet quitters”, and that engagement fell most among employees **under 35** (Harter, 2022).", "The problem is global. According to Gallup’s State of the Global Workplace report, only **21% of employees worldwide** were engaged at work in 2024, down from 23%. Gallup estimates that low engagement cost the world economy about **US$438 billion** in lost productivity that year (Gallup, 2025).", "Older generations sometimes call young workers “lazy”. Gallup argues that the main causes are usually different: **unclear expectations**, little feedback, no chance to learn and grow, and the feeling that nobody at work cares about you. Its main recommendation is for managers to hold short, regular one-to-one conversations with every employee (Harter, 2022).", "For students, “laziness” is often a sign of something else: unclear goals, low motivation, poor time management or exhaustion."], "question": "Is it fair to call young workers “lazy”? What motivates you to do more than the minimum?", "refs": ["Harter, J. (2022) Is quiet quitting real? Gallup. Available from: https://www.gallup.com/workplace/398306/quiet-quitting-real.aspx [Accessed 6 October 2026]", "Gallup (2025) State of the Global Workplace: 2025 report. Available from: https://www.gallup.com/workplace/349484/state-of-the-global-workplace.aspx [Accessed 6 October 2026]"]}, {"letter": "E", "title": "Lonely at Work? Remote Work and Human Connection", "text": ["Remote and hybrid work became normal after the COVID-19 pandemic. Working from home saves commuting time and gives flexibility. But there is a hidden cost. Gallup found that **1 in 5 employees worldwide (20%)** felt lonely for a lot of the previous day. Loneliness was highest among **fully remote workers (25%)**, compared with 21% of hybrid workers and 16% of people working on-site. Employees **younger than 35** were lonelier than older colleagues (Pendell, 2024).", "Gallup also found that people who are engaged in their work, who know what is expected of them and feel their work matters, are much less likely to feel lonely (Pendell, 2024).", "Loneliness matters most at the start of a career. Beginners learn a lot informally: by watching experienced colleagues, asking quick questions and having lunch together. These are also the moments when people build their **professional network** and find **mentors**. On a screen, these chances are easier to miss.", "What helps? Choosing hybrid rather than fully remote work at the start of a career, turning the camera on, asking questions, joining team events and actively looking for a mentor."], "question": "Would you prefer a fully remote job for your first position? What would you gain and lose?", "refs": ["Pendell, R. (2024) 1 in 5 employees worldwide feel lonely. Gallup. Available from: https://www.gallup.com/workplace/645566/employees-worldwide-feel-lonely.aspx [Accessed 6 October 2026]"]}, {"letter": "F", "title": "Gig Work: Freedom or Insecurity?", "text": ["“Gig” or platform work means earning money task by task through an app: taxi and delivery services, freelancing websites and similar platforms. In Tashkent, many young people work as couriers or drivers through such apps. The World Bank estimates that **between 154 and 435 million people** worldwide do online gig work alone, up to 12% of the global workforce, and that it is growing fastest in developing countries (World Bank, 2023).", "Gig work has clear advantages: **flexible hours**, quick income and few entry requirements, which makes it attractive for students. But it also has risks: **income can change from week to week**, and platform workers often have no paid holidays, sick pay or pension contributions. Decisions about pay or blocking an account are often made by an **algorithm**.", "In June 2026, the International Labour Organization (ILO) adopted the **first international standard on platform work**: Convention No. 193 on Decent Work in the Platform Economy (406 votes in favour, 8 against). It says that platform workers should be classified according to the real nature of their work, not the label a company gives them, and that they should have protections such as minimum wage, social protection and safety at work. Each country must now decide whether to ratify it (ILO, 2026)."], "question": "Is gig work a good option for students? What should you think about if it becomes a long-term job?", "refs": ["International Labour Organization (2026) How will the new Convention No. 193 promote decent work in the platform economy? Available from: https://www.ilo.org/resource/article/how-will-new-convention-no193-promote-decent-work-platform-economy [Accessed 6 October 2026]", "World Bank (2023) Working without borders: the promise and peril of online gig work. Washington, DC: World Bank. Available from: https://documents1.worldbank.org/curated/en/099071923113511279/pdf/P17730205fbe2002709043043e4d4f7efee.pdf [Accessed 6 October 2026]"]}], "cardTask": ["What is the challenge? Explain it in your own words.", "Give **one key fact** and cite the source orally (e.g. “According to Gallup, a global analytics company, …”).", "Who is most affected and why?", "What is **one thing a student can do now** to be ready?"], "ideal": [["I", "Identify the problem", "What exactly is happening? What is the problem or risk? What do we know and what don’t we know?"], ["D", "Define the problem and goals", "What matters most to the person (money, learning, health, career)? What do the contract and the law say?"], ["E", "Explore possible strategies", "What could the person do? Think of at least 3 options. What could happen with each one?"], ["A", "Act", "What is the best decision? Write the exact words the person should say."], ["L", "Look back and learn", "What would you do differently next time? How could this situation be avoided?"]], "idealSrc": "Bransford, J.D. and Stein, B.S. (1984) The ideal problem solver. New York: W.H. Freeman.", "cases": [{"n": 1, "title": "Two Offers", "place": "Tashkent", "text": ["Aziza has just graduated from WIUT with a degree in Business Management. She has received two job offers and must reply to both by Friday.", "**Offer A: an international bank in Tashkent.** Junior Analyst. Salary 9 million UZS per month, fully official. Office-based, Monday to Friday, 9:00–18:00. One-year fixed-term contract, which can be renewed. A structured 6-month training programme. The office is a 50-minute bus ride from her home.", "**Offer B: a fast-growing local delivery start-up.** Marketing and Operations Assistant. Salary 7.5 million UZS plus a bonus “if the company hits its targets”. Hybrid work (3 days in the office). Many different responsibilities and direct work with the founder. The founder says: “We will sign the contract after your first month. We trust each other here.”"], "questions": ["What should Aziza compare, apart from the salary?", "What risks do you see in each offer?", "What questions should she ask each employer before she decides?", "Which offer would you recommend, and why?"]}, {"n": 2, "title": "The “Unpaid Trial”", "place": "Tashkent", "text": ["Madina is 18 and studies at WIUT. She applies for a part-time job as a social media (SMM) assistant at a popular café chain. She needs the money and loves the brand.", "After a short interview, the manager says: **“First, two weeks of unpaid trial, so you can show us what you can do. Then six months of probation. We will pay the minimum officially and the rest in cash. It’s easier for everyone. And we don’t do contracts for part-timers.”**"], "questions": ["Which parts of this offer are red flags? Why?", "How could this arrangement harm Madina now and in the future?", "What could Madina say to the manager to protect her interests politely?", "What should she do if the manager refuses?"]}, {"n": 3, "title": "The Small Print", "place": "International: remote job for a Dubai company", "text": ["Kamron, a WIUT graduate, has been offered a remote job as a Junior Content Specialist for a digital marketing agency based in Dubai. He will work from Tashkent and be paid in US dollars. He is very excited, but the contract includes these clauses:", "**a)** “The employee may not work for any company in the marketing industry anywhere in the world for 2 years after leaving.”", "**b)** “All ideas, designs and content created by the employee, including outside working hours, belong to the company.”", "**c)** “Notice period: employee, 3 months; company, 1 week.”", "**d)** “Working hours are flexible; the employee is expected to be available whenever the business requires. Overtime is included in the salary.”", "**e)** “Salary is paid within 45 days after the end of each month.”"], "questions": ["Which clauses could be risky for Kamron? Why?", "Which clauses would you ask the company to change, and how?", "What important information is missing from the contract?", "How can he ask questions without sounding “difficult”?"]}, {"n": 4, "title": "Always On", "place": "Tashkent", "text": ["Nodira has worked as an HR assistant at a manufacturing company in Tashkent for seven months. It is her first full-time job, and her contract says 40 hours per week, Monday to Friday.", "Her manager often sends messages between 22:00 and 23:00 and at weekends, and expects answers within minutes. Nodira now sleeps badly, checks her phone all the time and has started to dread Mondays. A colleague told her: **“Everyone does it. If you complain, you will look lazy.”**"], "questions": ["What signs of burnout can you see?", "What are Nodira’s options? What could happen with each one?", "How should she prepare for a conversation with her manager? Write 3–4 sentences she could say.", "What can she change herself?"]}], "principles": [["Separate the people from the problem", "Be polite and respectful to the person, but clear about the issue."], ["Focus on interests, not positions", "Ask why the other side wants something, and explain why you want something."], ["Invent options for mutual gain", "Look for more than one solution so that both sides win (e.g. a salary review, training, a day working from home)."], ["Use objective criteria", "Base your proposal on fair facts: market salaries on hh.uz, company policy, the law."]], "negSrc": "Fisher, R., Ury, W. and Patton, B. (2011) Getting to yes. 3rd edn. New York: Penguin Books.", "keywords": [["BATNA / Plan B", "your best alternative if there is no agreement. A good Plan B makes you stronger."], ["Walk-away point", "the lowest offer you will accept."], ["Win-win", "both sides get something important."]], "dont": "Don’t say yes or no immediately. Say: “Could I have until Friday to think about it?”", "phrases": [["Opening", "“Thank you for the offer. I’m really excited about this role.”"], ["Asking", "“What matters most to you in this role?” / “How are salaries reviewed here?”"], ["Suggesting", "“Based on my research, similar roles pay between X and Y. Would X be possible?”"], ["Trading", "“If the salary is fixed, could we agree on a review after six months?”"], ["Buying time", "“Could I have until Friday to think about it?”"], ["Closing", "“So we agree on… Could you send me this by email?”"]], "roleplays": [{"n": 1, "title": "Your First Salary Offer", "place": "Tashkent, IT Park", "A": ["Candidate", "You have been offered a job as a Junior Data Analyst at an IT Park company in Tashkent: **7 million UZS per month**. Your research (hh.uz, WIUT alumni) shows that similar junior roles pay **8–11 million UZS**. You have strong Excel and Python skills, a three-month internship and a data analysis certificate. **Your target:** 9 million. **Your walk-away point:** 7.5 million, or 7 million with a guaranteed salary review after 6 months. You would also value a training budget and one day a week working from home. You have another interview next week but no other offer, so do not pretend you have one."], "B": ["HR Manager", "You want to hire this candidate: the position has been open for two months. You offered **7 million UZS**. Your budget allows up to **8.5 million**, but your director prefers 8 million or less. You can also offer a salary review after 6 months, a training budget of up to 3 million UZS a year and one day a week working from home. Do not reveal your maximum budget immediately. Find out what matters to the candidate."]}, {"n": 2, "title": "Exams and Your Internship", "place": "Tashkent, a bank", "A": ["Student intern", "You are doing a three-month paid internship at a bank in Tashkent (4 days a week, 2 million UZS a month). Your university exams start in two weeks. You want to work **only 2 days a week during the two exam weeks** without losing the internship, and you would like a **reference letter** at the end. **Your walk-away point:** at least one week of reduced hours before your most difficult exams."], "B": ["Team manager", "December is your busiest month (year-end reports). Your intern is reliable, but you need the current project (a client database update) finished. You can agree to reduced hours **if the project is finished before the exams** and the intern is available online for short questions. You are happy to write a reference letter if the work is good. You cannot change the payment."]}], "selfcheck": ["I was polite to the person but clear about the issue.", "I asked about the other side’s interests and explained mine.", "I suggested more than one option.", "I used facts (market salaries, policy, the law).", "I knew my Plan B and my walk-away point.", "We reached a win-win."], "cw1": [{"id": "lo1", "title": "LO1: Identify potential career paths and job opportunities within the desired field", "note": "Content, research, reference list, structure of the presentation (shared mark 50%)", "items": [["Does the chosen job align with the available courses at WIUT?", "s"], ["Are the job duties and responsibilities clearly described/defined?", "s"], ["Is the education and/or training required for the job included (at least 1 local and 1 foreign university, and 1 local and 1 foreign short course)? Are specific courses, alternative routes or internships recommended? Is it clear how long each course takes and what it costs?", "s"], ["Are the necessary skills and competencies identified? What hard skills and soft skills are required?", "s"], ["Is there information about the demand in the job market for this job (e.g. how many open vacancies on indeed.com, glassdoor.com, hh.uz)?", "s"], ["Is the occupation projected to grow, decline or remain unchanged? What is the impact of AI, automation or global trends on this profession?", "s"], ["Is information about salaries provided? If available, is there a comparison of salaries?", "s"], ["Is the structure logical? Does the presentation have a clear and strong introduction (greeting, hook, etc.), body and conclusion?", "s"], ["Is there a reference list at the end of the slides? Were the sources cited in the presentation? Does the list follow the Westminster Harvard Referencing Style?", "s"]]}, {"id": "lo3", "title": "LO3: Effectively present job-related information and findings through oral communication", "note": "Signposting, slides, in-text and oral referencing, delivery, language accuracy (individual mark 50%)", "items": [["Are the slides well designed (use of colour, appropriate amount of information per slide, suitable font and size, phrases rather than full sentences where possible)?", "s"], ["Are in-text citations included on the slides? Do they follow the Westminster Harvard Referencing Style?", "s"], ["Is signposting used appropriately?", "d"], ["Is the language fluent? Well-paced?", "d"], ["Is the pronunciation clear for the audience? Is it in plain and correct English? Is the style neutral?", "d"], ["Is the speaker’s voice heard well?", "d"], ["Is the speaker’s intonation well used?", "d"], ["Does the speaker keep eye contact?", "d"], ["Is the speaker’s body language positive? Is the posture open? Are gestures used effectively?", "d"], ["Are the sources clearly mentioned during the speech (e.g. websites, vacancies)?", "d"], ["Does the speaker talk for 5–7 minutes?", "d"], ["Is the speaker assertive and does he/she state his/her opinion clearly?", "d"], ["Does the speaker avoid reading directly from paper, slides or a device?", "d"]]}]};
+function $(s){return document.querySelector(s)}
+function esc(t){return String(t==null?'':t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+function md(t){return esc(t).replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/~~(.+?)~~/g,'<i>$1</i>')}
+var KEY='s10v5', S={};
+try{S=JSON.parse(localStorage.getItem(KEY)||'{}')||{}}catch(e){S={}}
+function get(k,d){return Object.prototype.hasOwnProperty.call(S,k)?S[k]:d}
+function set(k,v){S[k]=v;try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
+function toast(m){var t=$('#toast');t.textContent=m;t.classList.add('on');setTimeout(function(){t.classList.remove('on')},1500)}
+function copy(text){
+  function fallback(){var a=document.createElement('textarea');a.value=text;a.setAttribute('readonly','');a.style.position='fixed';a.style.opacity='0';document.body.appendChild(a);a.select();
+    var ok=false;try{ok=document.execCommand('copy')}catch(e){}a.remove();if(ok)toast('Copied');else window.prompt('Copy this text:',text)}
+  if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(text).then(function(){toast('Copied')},fallback)}else fallback()}
+function field(k,label,rows,ph){return '<label class="f">'+label+'</label>'+(rows>1?'<textarea data-k="'+k+'" rows="'+rows+'" placeholder="'+esc(ph||'')+'">'+esc(get(k,''))+'</textarea>':'<input type="text" data-k="'+k+'" placeholder="'+esc(ph||'')+'" value="'+esc(get(k,''))+'">')}
+function steps(arr){return '<ol class="steps">'+arr.map(function(s){return '<li>'+md(s)+'</li>'}).join('')+'</ol>'}
+function choice(id,items,cur){return '<div class="choice" id="'+id+'">'+items.map(function(it){return '<button data-v="'+esc(it[0])+'" class="'+(String(it[0])===String(cur)?'on':'')+'">'+md(it[1])+'</button>'}).join('')+'</div>'}
+function redFlag(open){var r=D.red;return '<details'+(open?' open':'')+'><summary>'+esc(r.title)+'</summary><p>'+md(r.text)+'</p><ul>'+r.examples.map(function(x){return '<li>'+md(x)+'</li>'}).join('')+'</ul><p>'+md(r.todo)+'</p></details>'}
+document.addEventListener('input',function(e){var k=e.target.getAttribute('data-k');if(k)set(k,e.target.value)});
+
+/* tabs */
+var TABS=[['warmup','1 Warm-up'],['reading','2 Reading'],['cases','3 Cases'],['negotiation','4 Negotiation'],['checklist','5 Checklist']];
+$('#tabs').innerHTML=TABS.map(function(t){return '<button data-t="'+t[0]+'">'+t[1]+'</button>'}).join('');
+function show(id){if(!document.getElementById(id))id='warmup';
+  Array.prototype.forEach.call(document.querySelectorAll('section'),function(s){s.classList.toggle('on',s.id===id)});
+  Array.prototype.forEach.call(document.querySelectorAll('#tabs button'),function(b){b.classList.toggle('on',b.getAttribute('data-t')===id)});
+  set('tab',id);window.scrollTo(0,0);
+  var i=TABS.map(function(t){return t[0]}).indexOf(id),nx=TABS[i+1],w=$('#next');
+  w.innerHTML=nx?'<button class="btn ghost" data-t="'+nx[0]+'">Next: '+nx[1].replace(/^\d+ /,'')+' →</button>':'';}
+$('#tabs').addEventListener('click',function(e){var b=e.target.closest('button');if(b)show(b.getAttribute('data-t'))});
+$('#next').addEventListener('click',function(e){var b=e.target.closest('button');if(b)show(b.getAttribute('data-t'))});
+
+/* ---------- Warm-up ---------- */
+function renderWarmup(){
+  var m=get('wm','a'), el=$('#warmup'), S1=D.silent, H=D.hunt;
+  var h='<h2>Warm-up</h2><p class="muted">Your teacher will tell you which option to do.</p>'+choice('wmc',[['a','A. Silent Presentations'],['b','B. Scavenger Hunt']],m);
+  if(m==='a'){
+    h+=steps(['Tap the button to get your group’s topic.','**4 minutes:** plan a 45–60-second presentation: greeting, 3 main points, conclusion, “thank you”.',
+      '**Present without words:** gestures, facial expressions, eye contact and humming with your mouth closed. Use intonation, pace, pauses and volume.',
+      'The class guesses your topic and your main points.']);
+    h+='<button class="btn" id="pick">Get our topic</button><div class="topic" id="topic">'+esc(get('topic',''))+'</div>';
+  } else {
+    var done=get('hunt',{}), score=0;
+    h+=steps([D.huntRule,H.tip]);
+    [1,2,3].forEach(function(p){H.cols[p].forEach(function(t,i){var k=p+'-'+i;if(done[k])score+=p;
+      h+='<label class="item"><input type="checkbox" data-h="'+k+'" data-p="'+p+'"'+(done[k]?' checked':'')+'><span><span class="pts">'+p+(p>1?' points':' point')+'</span> '+md(t)+'</span></label>'})});
+    h+='<p>Our points: <span class="score" id="score">'+score+'</span></p>'+redFlag(false);
+  }
+  el.innerHTML=h;
+  $('#wmc').onclick=function(e){var b=e.target.closest('button');if(b){set('wm',b.getAttribute('data-v'));renderWarmup()}};
+  if(m==='a'){$('#pick').onclick=function(){var t=S1.topics,cur=get('topic',''),n=cur;if(t.length>1){while(n===cur)n=t[Math.floor(Math.random()*t.length)]}else n=t[0];set('topic',n);$('#topic').textContent=n}}
+  else el.onchange=function(e){var k=e.target.getAttribute('data-h');if(!k)return;var d=get('hunt',{});d[k]=e.target.checked;set('hunt',d);
+    var s=0;Array.prototype.forEach.call(el.querySelectorAll('[data-h]'),function(c){if(c.checked)s+=+c.getAttribute('data-p')});$('#score').textContent=s};
+}
+
+/* ---------- Reading ---------- */
+function renderReading(){
+  var cur=get('card','A'), el=$('#reading');
+  var h='<h2>Future of Work: reading cards</h2>'+steps(['Open your group’s card (A–F) and read it (5 min).','Prepare a 90-second mini-presentation (4 min): the questions are under the card.','While others present, write one idea per card in the <b>Notes</b>.'.replace(/<\/?b>/g,'**')]);
+  var SHORT={A:'AI',B:'Burnout',C:'Phones',D:'Quiet quitting',E:'Loneliness',F:'Gig work'};
+  h+=choice('cardc',D.cards.map(function(c){return [c.letter,c.letter+'. '+(SHORT[c.letter]||c.title)]}).concat([['notes','My notes']]),cur);
+  if(cur==='notes'){
+    h+=D.cards.map(function(c){return field('note-'+c.letter,esc(c.letter+'. '+c.title),2,'One key idea')}).join('')+field('habit','My “future-proof” habit for this week',2,'');
+    h+='<div class="bar"><button class="btn" id="cpn">Copy my notes</button></div>';
+  } else {
+    var c=D.cards.filter(function(x){return x.letter===cur})[0]||D.cards[0];
+    h+='<div class="card"><h3>Card '+esc(c.letter)+'. '+md(c.title)+'</h3>'+c.text.map(function(p){return '<p>'+md(p)+'</p>'}).join('');
+    if(c.box)h+='<p class="secret"><b>'+md(c.box[0])+'</b><br>'+md(c.box[1])+'</p>';
+    h+='<p><b>Think about it:</b> <i>'+md(c.question)+'</i></p></div><h3>Your mini-presentation (90 seconds)</h3><ol>'+D.cardTask.map(function(t){return '<li>'+md(t)+'</li>'}).join('')+'</ol>';
+    h+='<p class="refs"><b>References</b><br>'+c.refs.map(function(r){return esc(r).replace(/(https?:\/\/[^\s]+)/,'<a href="$1" target="_blank" rel="noopener">link</a>')}).join('<br>')+'</p>';
+  }
+  el.innerHTML=h;
+  $('#cardc').onclick=function(e){var b=e.target.closest('button');if(b){set('card',b.getAttribute('data-v'));renderReading()}};
+  var cp=$('#cpn');if(cp)cp.onclick=function(){copy(D.cards.map(function(c){return c.letter+'. '+c.title+': '+get('note-'+c.letter,'')}).join('\n')+'\nMy habit: '+get('habit',''))};
+}
+
+/* ---------- Cases ---------- */
+function renderCases(){
+  var n=+get('case',1), el=$('#cases'), c=D.cases.filter(function(x){return x.n===n})[0]||D.cases[0];
+  var h='<h2>Case Study Judgement</h2>'+steps(['Open your group’s case and read it.','Answer the questions using the five <b>IDEAL</b> steps below.'.replace(/<\/?b>/g,'**'),'Agree on a decision and write the <b>exact words</b> the person should say.'.replace(/<\/?b>/g,'**'),'Tell the class your decision in one minute.']);
+  h+=choice('casec',D.cases.map(function(x){return [x.n,x.n+'. '+x.title]}),c.n);
+  h+='<h3>Case '+c.n+'. '+md(c.title)+' <span class="muted">('+md(c.place)+')</span></h3>'+c.text.map(function(p){return '<p>'+md(p)+'</p>'}).join('');
+  h+='<p><b>Questions</b></p><ol>'+c.questions.map(function(q){return '<li>'+md(q)+'</li>'}).join('')+'</ol>';
+  h+='<h3>Our analysis (IDEAL)</h3>'+D.ideal.map(function(s){return field('c'+c.n+s[0],'<b>'+s[0]+'</b> · '+esc(s[1])+' <small>'+esc(s[2])+'</small>',2,'')}).join('');
+  h+=field('c'+c.n+'words','The exact words the person should say',3,'');
+  h+='<div class="bar"><button class="btn" id="cpc">Copy our analysis</button></div>'+redFlag(false)+'<p class="refs">IDEAL: '+esc(D.idealSrc)+'</p>';
+  el.innerHTML=h;
+  $('#casec').onclick=function(e){var b=e.target.closest('button');if(b){set('case',+b.getAttribute('data-v'));renderCases()}};
+  $('#cpc').onclick=function(){copy('Case '+c.n+'. '+c.title+'\n'+D.ideal.map(function(s){return s[0]+' ('+s[1]+'): '+get('c'+c.n+s[0],'')}).join('\n')+'\nExact words: '+get('c'+c.n+'words',''))};
+}
+
+/* ---------- Negotiation ---------- */
+function renderNeg(){
+  var r=+get('rpRound',1), role=get('rpRole',''), shown=!!get('rpShown',false), el=$('#negotiation');
+  var rp=D.roleplays.filter(function(x){return x.n===r})[0]||D.roleplays[0];
+  var h='<h2>Negotiation</h2>';
+  h+='<details'+(get('negOpen',true)?' open':'')+' id="theory"><summary>How to negotiate: principled negotiation</summary><table>'+D.principles.map(function(p,i){return '<tr><td class="l">'+(i+1)+'</td><td><b>'+md(p[0])+'</b><br><span class="muted">'+md(p[1])+'</span></td></tr>'}).join('')+'</table>';
+  h+='<p>'+D.keywords.map(function(k){return '<b>'+md(k[0])+':</b> '+md(k[1])}).join('<br>')+'</p><p>'+md(D.dont)+'</p>';
+  h+='<p><b>Useful phrases</b></p><ul>'+D.phrases.map(function(p){return '<li><b>'+md(p[0])+':</b> '+md(p[1])+'</li>'}).join('')+'</ul><p class="refs">'+esc(D.negSrc)+'</p></details>';
+  h+='<h3>Role play in pairs</h3>'+steps(['Choose the round your teacher gives you.','Agree with your partner: one of you is <b>A</b>, the other is <b>B</b>.'.replace(/<\/?b>/g,'**'),'Tap your letter and read <b>only your card</b>. Do not show it to your partner.'.replace(/<\/?b>/g,'**'),'Prepare (2 min), negotiate (4 min), then do the self-check.']);
+  h+=choice('roundc',D.roleplays.map(function(x){return [x.n,'Round '+x.n+': '+x.title]}),rp.n);
+  h+=choice('rolec',[['A','I am A'],['B','I am B'],['C','Observer (group of 3)']],role);
+  if(role==='A'||role==='B'){
+    var card=rp[role];
+    h+='<div class="secret"><b>'+role+': '+md(card[0])+'</b> · <span class="muted">'+md(rp.title)+'</span>';
+    h+=shown?'<p>'+md(card[1])+'</p><button class="link" id="hide">Hide my card</button>':'<p class="muted">Make sure your partner cannot see your screen.</p><button class="btn" id="reveal">Show my card</button>';
+    h+='</div>';
+    h+=field('rp'+rp.n+role+'t','My target',1,'')+field('rp'+rp.n+role+'w','My walk-away point',1,'')+field('rp'+rp.n+role+'b','My Plan B (BATNA)',1,'')+field('rp'+rp.n+role+'q','Questions I will ask about their interests',2,'');
+  } else if(role==='C'){
+    h+='<p class="muted">Listen to both sides. Tick what you notice, then tell them.</p>';
+  }
+  if(role){
+    var who=role==='C'?'obs':'self', sc=get(who+rp.n,{});
+    h+='<h3>'+(role==='C'?'Observer checklist':'Self-check after the role play')+'</h3>'+D.selfcheck.map(function(s,i){return '<label class="item"><input type="checkbox" data-s="'+i+'"'+(sc[i]?' checked':'')+'><span>'+md(s)+'</span></label>'}).join('');
+    h+=field(who+rp.n+'next','One thing to do differently next time',2,'');
+  }
+  el.innerHTML=h;
+  $('#theory').addEventListener('toggle',function(){set('negOpen',this.open)});
+  $('#roundc').onclick=function(e){var b=e.target.closest('button');if(b){set('rpRound',+b.getAttribute('data-v'));set('rpShown',false);renderNeg()}};
+  $('#rolec').onclick=function(e){var b=e.target.closest('button');if(b){set('rpRole',b.getAttribute('data-v'));set('rpShown',false);renderNeg()}};
+  var rv=$('#reveal');if(rv)rv.onclick=function(){set('rpShown',true);renderNeg()};
+  var hd=$('#hide');if(hd)hd.onclick=function(){set('rpShown',false);renderNeg()};
+  el.onchange=function(e){var i=e.target.getAttribute('data-s');if(i===null)return;var who=get('rpRole','')==='C'?'obs':'self',k=who+(+get('rpRound',1)),o=get(k,{});o[i]=e.target.checked;set(k,o)};
+}
+
+/* ---------- CW1 checklist (same as the standalone page) ---------- */
+var finished=false;
+function renderChecklist(){
+  var el=$('#checklist'), opts=['Yes','Somewhat','No'];
+  var h='<h2>CW1 checklist</h2>'+steps(['Answer each question about the CW1 presentation (yours or another group’s).','Tap **Finish**: points to work on will be highlighted.','Tap **Copy** to share the result.']);
+  h+=field('ckGroup','Group / job',1,'');
+  D.cw1.forEach(function(sec){h+='<h3>'+md(sec.title)+'</h3><p class="muted">'+md(sec.note)+'</p>';
+    sec.items.forEach(function(it,i){var k='ck-'+sec.id+i, v=get(k,'');
+      h+='<div class="q" data-q="'+k+'">'+md(it[0])+(it[1]==='d'?' <small>(delivery: check at the Mock Presentation)</small>':'')+'<div class="opts">'+opts.map(function(o){return '<label><input type="radio" name="'+k+'" value="'+o+'"'+(v===o?' checked':'')+'>'+o+'</label>'}).join('')+'</div><div class="hint">Please work on this.</div></div>'})});
+  h+='<div id="fix"></div>';
+  h+=field('ckStars','Two stars and a wish <small>(when you review another group)</small>',3,'★ … ★ … Wish: …');
+  h+=field('ckNotes','Notes and next steps',3,'What will you improve? Who? By when?');
+  h+='<div class="bar"><button class="btn" id="finish">Finish</button><button class="link" id="cpk">Copy</button><button class="link" id="clk">Clear</button><span class="muted" id="cnt"></span></div>';
+  el.innerHTML=h; finished=false;
+  function items(){var a=[];D.cw1.forEach(function(sec){sec.items.forEach(function(it,i){a.push(['ck-'+sec.id+i,it[0]])})});return a}
+  function count(){var a=items(),d=0;a.forEach(function(x){if(get(x[0],''))d++});$('#cnt').textContent=d+'/'+a.length+' answered';return a.length-d}
+  function todo(){return items().filter(function(x){var v=get(x[0],'');return v==='No'||v==='Somewhat'})}
+  function mark(){var keys={};todo().forEach(function(x){keys[x[0]]=1});Array.prototype.forEach.call(el.querySelectorAll('.q'),function(q){q.classList.toggle('flag',finished&&!!keys[q.getAttribute('data-q')])})}
+  count();
+  el.onchange=function(e){var t=e.target;if(t.type==='radio'){set(t.name,t.value);count();if(finished)mark()}};
+  $('#finish').onclick=function(){finished=true;mark();var left=count(),a=todo(),m='';
+    if(left)m+='<p>You still have '+left+' question'+(left>1?'s':'')+' to answer. You can come back to them any time.</p>';
+    if(a.length)m+='<p><b>Thank you! Please work on '+(a.length===1?'this point':'these points')+':</b></p><ul>'+a.map(function(x){return '<li>'+md(x[1])+'</li>'}).join('')+'</ul><p class="muted">They are highlighted above.</p>';
+    else if(!left)m+='<p><b>Great work, everything looks ready!</b></p>';
+    $('#fix').innerHTML=m;$('#fix').scrollIntoView({behavior:'smooth',block:'center'})};
+  $('#cpk').onclick=function(){var t='CW1 checklist: '+get('ckGroup','')+'\n';
+    items().forEach(function(x){t+='- '+x[1]+' → '+(get(x[0],'')||'—')+'\n'});var a=todo();if(a.length)t+='\nTo work on:\n'+a.map(function(x){return '- '+x[1]}).join('\n')+'\n';
+    if(get('ckStars',''))t+='\nTwo stars and a wish: '+get('ckStars','')+'\n';
+    t+='Notes: '+get('ckNotes','');copy(t)};
+  $('#clk').onclick=function(){if(!window.confirm('Clear all answers in the checklist?'))return;items().forEach(function(x){delete S[x[0]]});set('ckStars','');set('ckNotes','');renderChecklist()};
+}
+
+$('#resetAll').onclick=function(){if(window.confirm('Clear ALL your answers on this page?')){S={};try{localStorage.removeItem(KEY)}catch(e){}location.reload()}};
+function safe(f,id){try{f()}catch(err){var el=document.getElementById(id);if(el)el.innerHTML='<p>Something went wrong. Please reload the page.</p>';if(window.console)console.error(err)}}
+safe(renderWarmup,'warmup');safe(renderReading,'reading');safe(renderCases,'cases');safe(renderNeg,'negotiation');safe(renderChecklist,'checklist');
+show(get('tab','warmup'));
+})();
+</script>
+</body>
+</html>
